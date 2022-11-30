@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE DICE GAME</title>
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="d-flex justify-content-center align-items-center">
+    <main class="col-12 col-sm-10 col-md-8">
+        <h1 class="mt-3 fw-bold col-12">THE DICE GAME</h1>
+        <div class="position-relative newGameWrap">
+            <div class="btnWrap mt-3">
+                <button class="position-absolute start-50 translate-middle btnNewGame">
+                    <span class="plus">+</span>
+                    <span class="newGame"> NEW GAME</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="globalGame">
+            <div class="player1">
+                <h2 class="p1 text-danger">
+                    <div class="notifPoint redPoint"></div>
+                    PLAYER 1
+                </h2>
+                <div class="globalScore1 text-danger ">0</div>
+            </div>
+            <div class="player2">
+                <h2 class="p2">
+                    <div class="notifPoint"></div>
+                    PLAYER 2
+                </h2>
+                <div class="globalScore2 text-danger ">0</div>
+            </div>
+            <div class="dices">
+                <img class="newDice" id="dice0" src="./images/dice1.png" alt="dice" data-random="">
+            </div>
+        </div>
+        <div class="currentGame">
+            <p class="textInfo">
+                <span class="info"> &nbsp;</span>
+            </p>
+            <button type="button" class="btn rollBtn">
+                ROLL THE DICE &nbsp; &nbsp;
+                <img src="./images/Roll.png" class="img-btn1" alt="">
+            </button>
+            <button type="button" class="btn holdBtn">
+                HOLD &nbsp; &nbsp;
+                <img src="./images/Hold.png" class="img-btn" alt="">
+            </button>
+
+
+            <div class="roundScore">
+                <div class="roundScoreP1 bg-danger">
+                    <h3 class="text-dark">CURRENT</h3>
+                    <div class="current1 text-light">0</div>
+                </div>
+                <div class="roundScoreP2 bg-danger">
+                    <h3 class="text-dark">CURRENT</h3>
+                    <div class="current2 text-light">0</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="rules position-absolute w-100 h-100 bg-danger bg-dark">
+        <div
+            class="rulesWrap text-warning bg-dark position-relative top-50 start-50 translate-middle col-12 col-sm-10 col-md-6 bg-info">
+            <button class="position-absolute end-0 me-4 mt-4 fs-1 text-warning closeRules">x</button>
+            <h2 class="col-12 text-decoration-underline">
+                THE DICE GAME RULES
+            </h2>
+            <p class="col-12 text-center p-2">
+                &nbsp;Règles :
+                <br><br>
+                Le jeu comprend 2 joueurs sur un seul et même écran.
+                Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL).
+                À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le
+                souhaite.
+                Le
+                résultat d’un lancer est ajouté au ROUND.
+                Lors de son tour, le joueur peut décider à tout moment de:
+                <br>
+                - Cliquer sur l’option “Hold”, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le
+                tour de l’autre joueur.
+                <br>
+                - Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.
+                Le premier joueur qui atteint les 100 points sur global gagne le jeu.
+            </p>
+        </div>
+    </div>
+
+    <script src="./js/diceGame.js"></script>
+</body>
+
+</html>
